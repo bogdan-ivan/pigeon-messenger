@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Generated";
+
+import "User.proto";
+
+message Message 
+{
+	User sender = 1;
+	User receiver = 2;
+	string content = 3;
+	string timestamp = 4;
+}

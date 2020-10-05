@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Client.View.JoinView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="480"
+             d:DesignWidth="640">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/JoinPagePicture.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblMessage" Content="Pigeon Messenger" FontWeight="Bold" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontFamily="Bradley Hand ITC" FontStyle="Italic"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <Label x:Name="lblName" FontWeight="Bold" FontFamily="Bradley Hand ITC" Content="Choose your name" FontSize="35"/>
+            <TextBox x:Name="txtName" Width="256" Height="32" Grid.Row="1" Grid.Column="1" Text="{Binding Name}"
+                 FontSize="30" VerticalContentAlignment="Center" FontFamily="Bradley Hand ITC" Margin="7"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Button x:Name="btnJoin" FontWeight="Bold" Margin="10" Grid.Column="1" Content="Join" Width="128" Height="45" 
+                Command="{Binding Connect}" FontSize="30" FontFamily="Bradley Hand ITC" 
+                 BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Cursor="Hand"/>
+            <Label x:Name="lblCopyrights" Content="© 2020 Dev - Team. All rights reserved." FontFamily="Times New Roman"  FontSize="15"
+                   HorizontalAlignment="Right" Margin="0,55"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

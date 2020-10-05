@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "Generated";
+
+message User 
+{
+    int32 id = 1;
+    string name = 2;
+	string initials = 3;
+	string profilePictureRGB = 4;
+	string lastMessage = 5;
+}

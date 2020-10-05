@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "Generated";
+
+import "User.proto";
+
+message DisconnectRequest
+{
+	User user = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Message.proto";
+
+option csharp_namespace = "Generated";
+
+service EchoClient 
+{
+	rpc Echo(stream Message) returns (stream Message);
+}

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Client.View.ChatListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local2="clr-namespace:Client.ViewModel"
+             xmlns:local1="clr-namespace:Client.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.DataContext>
+        <local2:ChatListViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <ListBox x:Name="MyListBox" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 ItemsSource="{Binding ChatVM.FilteredConnectedUsers, UpdateSourceTrigger=PropertyChanged}"
+                 SelectionChanged="MyListBox_SelectionChanged">
+            <ListBox.Background>
+                <ImageBrush ImageSource="../Resources/SideMeniuImage.jpg" Stretch="UniformToFill"/>
+            </ListBox.Background>
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <local1:ChatListItem Width="205"  HorizontalAlignment="Center"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

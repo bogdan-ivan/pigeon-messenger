@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "Generated";
+
+import "Message.proto";
+import "google/protobuf/empty.proto";
+
+service ChatService 
+{
+	rpc SendMessage(Message) returns (google.protobuf.Empty);
+}

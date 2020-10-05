@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "Generated";
+
+import "User.proto";
+
+service UserListService 
+{
+	rpc GetUsers(stream User) returns (stream User);
+}

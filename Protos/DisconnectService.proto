@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "DisconnectRequest.proto";
+
+option csharp_namespace = "Generated";
+
+service DisconnectService 
+{
+	rpc Disconnect(DisconnectRequest) returns (google.protobuf.Empty);
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "ConnectRequest.proto";
+import "ConnectResponse.proto";
+import "Message.proto";
+
+option csharp_namespace = "Generated";
+
+service ConnectService 
+{
+	rpc Connect(ConnectRequest) returns (ConnectResponse);
+	rpc Register(stream Message) returns (stream Message);
+}
